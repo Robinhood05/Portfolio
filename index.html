@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sajibul Islam - Portfolio</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            'sans': ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+            'display': ['Space Grotesk', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            accent: {
+              50: '#fff7ed',
+              100: '#ffedd5',
+              200: '#fdba74',
+              300: '#fb923c',
+              400: '#f97316',
+              500: '#ea580c',
+              600: '#c2410c',
+              700: '#9a3412',
+              800: '#7c2d12',
+              900: '#431407',
+            },
+            dark: '#18181b',
+          },
+          boxShadow: {
+            glass: '0 8px 32px 0 rgba(31, 38, 135, 0.18)',
+          },
+          backdropBlur: { 
+            glass: '8px',
+          },
+          animation: {
+            fadein: 'fadein 1s ease',
+          },
+          keyframes: {
+            fadein: {
+              '0%': { opacity: 0, transform: 'translateY(40px)' },
+              '100%': { opacity: 1, transform: 'translateY(0)' },
+            },
+          },
+        },
+      },
+    }
+  </script>
+  <style>
+    .font-display {
+      font-family: 'Space Grotesk', sans-serif;
+    }
+    .font-sans {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .glass {
+      background: rgba(255,255,255,0.7);
+      box-shadow: 0 8px 32px 0 rgba(31,38,135,0.10);
+      backdrop-filter: blur(12px);
+      border-radius: 1.5rem;
+      border: 1px solid rgba(255,255,255,0.25);
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .glass:hover {
+      box-shadow: 0 12px 40px 0 rgba(31,38,135,0.18);
+      transform: translateY(-4px) scale(1.02);
+    }
+    @media (max-width: 640px) {
+      .text-responsive {
+        font-size: clamp(1rem, 5vw, 1.5rem);
+      }
+    }
+  </style>
+</head>
+<body class="bg-white text-dark font-sans transition-colors duration-300">
+  <!-- Navigation -->
+  <nav class="fixed w-full bg-dark/90 backdrop-blur z-50 shadow-sm">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <span class="text-2xl font-display font-bold tracking-tight text-accent-500">Sajibul Islam</span>
+        <ul class="flex gap-2 md:gap-4">
+          <li><a href="#" class="px-4 py-2 rounded-full font-medium text-white bg-accent-500 hover:bg-accent-600 transition">Home</a></li>
+          <li><a href="#about" class="px-4 py-2 rounded-full font-medium text-white hover:bg-accent-100 hover:text-accent-600 transition">About</a></li>
+          <li><a href="#projects" class="px-4 py-2 rounded-full font-medium text-white hover:bg-accent-100 hover:text-accent-600 transition">Projects</a></li>
+          <li><a href="#contact" class="px-4 py-2 rounded-full font-medium text-white hover:bg-accent-100 hover:text-accent-600 transition">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-24">
+    <!-- Hero Section -->
+    <header class="min-h-[80vh] flex flex-col justify-center items-center text-center mb-20 animate-fadein pt-16 relative">
+      <div class="relative flex flex-col items-center w-full">
+        <!-- Profile Image + Circular Accent -->
+        <div class="relative flex items-center justify-center w-56 h-56 mx-auto mb-8">
+          <div class="absolute inset-0 m-auto w-56 h-56 bg-accent-100 rounded-full -z-10"></div>
+          <img src="images/profile1.jpg" 
+               alt="Sajibul Islam" 
+               class="w-44 h-44 object-cover rounded-full border-4 border-white shadow-xl z-10"
+               onmouseover="this.src='images/profile2.jpg'"
+               onmouseout="this.src='images/profile1.jpg'">
+        </div>
+     
+        <!-- Headline -->
+        <h1 class="text-5xl sm:text-6xl md:text-7xl font-display font-bold tracking-tight mt-4">
+          I'm <span class="text-accent-500">Sajibul</span>,<br>
+          <span class="text-dark">Web Developer & AI Enthusiast</span>
+        </h1>
+        <p class="mt-4 text-lg sm:text-xl text-gray-600 max-w-xl mx-auto">I design and build modern, responsive web applications with a focus on user experience and performance.</p>
+        <!-- Social Links -->
+        <div class="flex justify-center gap-4 mt-6">
+          <a href="https://github.com/Robinhood05" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 bg-dark hover:bg-accent-500 text-white rounded-full font-semibold shadow transition">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.484 2 12.021c0 4.428 2.865 8.184 6.839 9.504.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.342-3.369-1.342-.454-1.157-1.11-1.465-1.11-1.465-.908-.62.069-.608.069-.608 1.004.07 1.532 1.032 1.532 1.032.892 1.53 2.341 1.088 2.91.832.091-.647.35-1.088.636-1.339-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.987 1.029-2.686-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.295 2.748-1.025 2.748-1.025.546 1.378.202 2.397.1 2.65.64.699 1.028 1.593 1.028 2.686 0 3.847-2.338 4.695-4.566 4.944.359.309.678.919.678 1.852 0 1.336-.012 2.417-.012 2.747 0 .267.18.577.688.479C19.138 20.2 22 16.447 22 12.021 22 6.484 17.523 2 12 2z"/></svg>
+            GitHub
+          </a>
+          <a href="https://linkedin.com/in/Sajibul Islam" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 bg-accent-500 hover:bg-accent-600 text-white rounded-full font-semibold shadow transition">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.28c-.966 0-1.75-.79-1.75-1.76s.784-1.76 1.75-1.76 1.75.79 1.75 1.76-.784 1.76-1.75 1.76zm13.5 11.28h-3v-5.6c0-1.34-.03-3.07-1.87-3.07-1.87 0-2.16 1.46-2.16 2.97v5.7h-3v-10h2.89v1.36h.04c.4-.76 1.38-1.56 2.84-1.56 3.04 0 3.6 2 3.6 4.59v5.61z"/></svg>
+            LinkedIn
+          </a>
+        </div>
+        <!-- Portfolio Button -->
+        <a href="#projects" class="mt-8 inline-flex items-center gap-2 px-8 py-3 bg-accent-500 hover:bg-accent-600 text-white text-lg font-bold rounded-full shadow-lg transition">
+          Portfolio
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+      </div>
+    </header>
+
+    <!-- Experience -->
+    <section class="mb-20">
+      <h2 class="text-3xl font-display font-bold mb-8 text-center tracking-tight text-dark">Experience</h2>
+      <div class="glass p-8 mb-8 text-left text-dark">
+        <h3 class="text-2xl font-display font-semibold mb-2 tracking-tight">Intern, Collective AI</h3>
+        <p class="text-base font-medium mb-4">Jan 2025 – Ongoing (Remote)</p>
+        <ul class="space-y-2 text-base">
+          <li class="flex items-start gap-2"><span class="text-accent-500">●</span> Developed and enhanced front-end using TailwindCSS and Next.js</li>
+          <li class="flex items-start gap-2"><span class="text-accent-500">●</span> Integrated APIs with frontend</li>
+          <li class="flex items-start gap-2"><span class="text-accent-500">●</span> Used Git, GitHub, Docker Desktop</li>
+          <li class="flex items-start gap-2"><span class="text-accent-500">●</span> Communicated with team members using Slack and Asana</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="mb-20" id="projects">
+      <h2 class="text-3xl font-display font-bold mb-8 text-center tracking-tight text-dark">Projects</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="glass p-6 text-left text-dark">
+          <h3 class="text-xl font-display font-semibold mb-2 tracking-tight">Medicine Prediction System</h3>
+          <p class="mb-3 font-medium">ML-based site suggesting disease, medication, diet</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 bg-accent-100 text-accent-700 rounded-full text-xs font-semibold">JS</span>
+            <span class="px-3 py-1 bg-accent-100 text-accent-700 rounded-full text-xs font-semibold">Tailwind</span>
+            <span class="px-3 py-1 bg-accent-100 text-accent-700 rounded-full text-xs font-semibold">Jupyter</span>
+          </div>
+        </div>
+        <div class="glass p-6 text-left text-dark">
+          <h3 class="text-xl font-display font-semibold mb-2 tracking-tight">Cafeteria Website</h3>
+          <p class="mb-3 font-medium">Full-stack site using JS, PHP, MySQL</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 bg-accent-100 text-accent-700 rounded-full text-xs font-semibold">JS</span>
+            <span class="px-3 py-1 bg-accent-100 text-accent-700 rounded-full text-xs font-semibold">PHP</span>
+            <span class="px-3 py-1 bg-accent-100 text-accent-700 rounded-full text-xs font-semibold">MySQL</span>
+          </div>
+        </div>
+        <div class="glass p-6 text-left text-dark">
+          <h3 class="text-xl font-display font-semibold mb-2 tracking-tight">Food Order App</h3>
+          <p class="mb-3 font-medium">Bash-script based GUI windows app</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 bg-accent-100 text-accent-700 rounded-full text-xs font-semibold">Bash</span>
+            <span class="px-3 py-1 bg-accent-100 text-accent-700 rounded-full text-xs font-semibold">GUI</span>
+          </div>
+        </div>
+        <!-- New Project: Self Driving Vehicle Simulator using CNN -->
+        <div class="glass p-6 text-left text-dark">
+          <h3 class="text-xl font-display font-semibold mb-2 tracking-tight">Self Driving Vehicle Simulator using CNN</h3>
+          <p class="mb-3 font-medium">Simulated self-driving car using convolutional neural networks for lane and object detection.</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 bg-accent-100 text-accent-700 rounded-full text-xs font-semibold">Python</span>
+            <span class="px-3 py-1 bg-accent-100 text-accent-700 rounded-full text-xs font-semibold">CNN</span>
+            <span class="px-3 py-1 bg-accent-100 text-accent-700 rounded-full text-xs font-semibold">OpenCV</span>
+          </div>
+        </div>
+        <!-- New Project: Flood Prediction from Satellite Images (In Progress) -->
+        <div class="glass p-6 text-left text-dark">
+          <h3 class="text-xl font-display font-semibold mb-2 tracking-tight">Flood Prediction from Satellite Images <span class='text-xs text-accent-500'>(In Progress)</span></h3>
+          <p class="mb-3 font-medium">Working on flood prediction using satellite imagery and machine learning.</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 bg-accent-100 text-accent-700 rounded-full text-xs font-semibold">Python</span>
+            <span class="px-3 py-1 bg-accent-100 text-accent-700 rounded-full text-xs font-semibold">ML</span>
+            <span class="px-3 py-1 bg-accent-100 text-accent-700 rounded-full text-xs font-semibold">Satellite Data</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="mb-20">
+      <h2 class="text-3xl font-display font-bold mb-8 text-center tracking-tight text-dark">Skills</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+        <div class="glass p-6 text-center text-dark font-semibold text-lg">C++</div>
+        <div class="glass p-6 text-center text-dark font-semibold text-lg">Python</div>
+        <div class="glass p-6 text-center text-dark font-semibold text-lg">JavaScript</div>
+        <div class="glass p-6 text-center text-dark font-semibold text-lg">React</div>
+        <div class="glass p-6 text-center text-dark font-semibold text-lg">Next.js</div>
+        <div class="glass p-6 text-center text-dark font-semibold text-lg">Tailwind</div>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section class="mb-20">
+      <h2 class="text-3xl font-display font-bold mb-8 text-center tracking-tight text-dark border-b-2 border-accent-100 pb-2">Education</h2>
+      <div class="space-y-6">
+        <div class="glass p-6 text-left text-dark">
+          <h3 class="text-xl font-display font-semibold mb-2 tracking-tight">BCS in Computer Science and Engineering</h3>
+          <p class="font-medium">Green University of Bangladesh</p>
+          <p class="text-sm">Oct 2021 – Oct 2025</p>
+        </div>
+        <div class="glass p-6 text-left text-dark">
+          <h3 class="text-xl font-display font-semibold mb-2 tracking-tight">HSC Science</h3>
+          <p class="font-medium">Rajbari Govt College</p>
+          <p class="text-sm">2017 – 2019</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Languages -->
+    <section class="mb-20">
+      <h2 class="text-3xl font-display font-bold mb-8 text-center tracking-tight text-dark">Languages</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="glass p-6 text-center text-dark">
+          <h3 class="text-xl font-display font-semibold mb-2 tracking-tight">Bangla</h3>
+          <div class="flex justify-center gap-1 mb-2">
+            <span class="w-3 h-3 bg-accent-500 rounded-full"></span>
+            <span class="w-3 h-3 bg-accent-500 rounded-full"></span>
+            <span class="w-3 h-3 bg-accent-500 rounded-full"></span>
+            <span class="w-3 h-3 bg-accent-500 rounded-full"></span>
+            <span class="w-3 h-3 bg-accent-500 rounded-full"></span>
+          </div>
+        </div>
+        <div class="glass p-6 text-center text-dark">
+          <h3 class="text-xl font-display font-semibold mb-2 tracking-tight">English</h3>
+          <div class="flex justify-center gap-1 mb-2">
+            <span class="w-3 h-3 bg-accent-500 rounded-full"></span>
+            <span class="w-3 h-3 bg-accent-500 rounded-full"></span>
+            <span class="w-3 h-3 bg-accent-500 rounded-full"></span>
+            <span class="w-3 h-3 bg-accent-500 rounded-full"></span>
+            <span class="w-3 h-3 bg-accent-500 rounded-full"></span>
+          </div>
+        </div>
+       
+    </section>
+
+    <!-- Quote -->
+    <section class="mb-20 text-center">
+      <blockquote class="text-2xl italic text-primary-600/80 dark:text-primary-400/80 max-w-3xl mx-auto font-display font-medium tracking-wide">
+        "The real happiness you can only get by fulfilling other's wishes"
+      </blockquote>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center py-8 border-t border-primary-200 dark:border-primary-800">
+      <p class="text-primary-600/60 dark:text-primary-400/60 font-medium">© 2025 Sajibul Islam. All rights reserved.</p>
+    </footer>
+  </div>
+</body>
+</html>
